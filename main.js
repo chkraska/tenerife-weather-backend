@@ -6,3 +6,8 @@ console.log("kolejny log")
 console.log("jeszcze jeden")
 
 console.log("dawid zmiana")
+
+console.log("siema")
+
+
+console.log("DAWID ZMIANA 2")
