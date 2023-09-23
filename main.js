@@ -22,12 +22,7 @@ db.once("open", () => {
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      // console.log(data[0].name.common);
       console.log(data);
-      // data.forEach((country) => console.log(country.name.common));
-      // data.forEach((country) => console.log(country.population));
-      // data.forEach((country) => console.log(country.capital));
-      // data.forEach((item) => saveToFile(item));
     } catch (error) {
       console.log("błąd", error);
     } finally {
