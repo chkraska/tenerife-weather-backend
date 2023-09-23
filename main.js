@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { getWeather } from "./utils/getWeather.js";
 import { convertFahrenheitToCelsius } from "./utils/convertToCelsius.js";
+import { Weather } from "./models/Weather.js";
 dotenv.config();
 
 const MONGO_URL = process.env.ATLAS_CONNECTION;
@@ -22,8 +23,8 @@ db.once("open", async () => {
 
   const weatherData = {
     temp: convertFahrenheitToCelsius(weather.main.temp),
-    min: convertFahrenheitToCelsius(weather.main.temp_min),
-    max: convertFahrenheitToCelsius(weather.main.temp_max),
+    min_temp: convertFahrenheitToCelsius(weather.main.temp_min),
+    max_temp: convertFahrenheitToCelsius(weather.main.temp_max),
     humidity: weather.main.humidity,
     clouds: weather.clouds.all,
     desc: weather.weather[0].description,
@@ -31,5 +32,5 @@ db.once("open", async () => {
     // temp,min,max,humidity,clouds,desc,timestamp
   };
 
-  console.log(weatherData);
+  await new Weather(weatherData).save()
 });
