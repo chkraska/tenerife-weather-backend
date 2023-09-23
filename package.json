@@ -12,5 +12,6 @@
   "dependencies": {
     "mongoose": "^7.5.2",
     "node-fetch": "^3.3.2"
-  }
+  },
+  "type":"module"
 }
