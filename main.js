@@ -17,20 +17,23 @@ db.on("error", (err) => {
   console.error("Błąd połączenia z bazą danych", err);
 });
 
-db.once("open", async () => {
+db.once("open", () => {
   console.log("Połączono z bazą danych");
-  const weather = await getWeather();
 
-  const weatherData = {
-    temp: convertFahrenheitToCelsius(weather.main.temp),
-    min_temp: convertFahrenheitToCelsius(weather.main.temp_min),
-    max_temp: convertFahrenheitToCelsius(weather.main.temp_max),
-    humidity: weather.main.humidity,
-    clouds: weather.clouds.all,
-    desc: weather.weather[0].description,
-    timestamp: new Date(),
-    // temp,min,max,humidity,clouds,desc,timestamp
-  };
+  async function timeout() {
+    const weather = await getWeather();
+    const weatherData = {
+      temp: convertFahrenheitToCelsius(weather.main.temp),
+      min_temp: convertFahrenheitToCelsius(weather.main.temp_min),
+      max_temp: convertFahrenheitToCelsius(weather.main.temp_max),
+      humidity: weather.main.humidity,
+      clouds: weather.clouds.all,
+      desc: weather.weather[0].description,
+      timestamp: new Date(),
+      // temp,min,max,humidity,clouds,desc,timestamp
+    };
 
-  await new Weather(weatherData).save()
+    await new Weather(weatherData).save();
+  }
+  setTimeout(timeout, 15000);
 });
