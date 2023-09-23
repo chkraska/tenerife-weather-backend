@@ -15,8 +15,13 @@ db.on("error", (err) => {
   console.error("Błąd połączenia z bazą danych", err);
 });
 
-db.once("open", () => {
+db.once("open", async () => {
   console.log("Połączono z bazą danych");
-  const weather = getWeather()
+  const weather = await getWeather()
+  console.log(weather)
+
+  const weatherData = {
+    // temp,min,max,humidity,clouds,desc,timestamp
+  }
 
 });
