@@ -7,3 +7,5 @@ console.log("jeszcze jeden")
 
 
 console.log("siema")
+
+console.log("oskar1")
