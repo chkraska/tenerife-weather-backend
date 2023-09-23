@@ -1,17 +1,16 @@
-console.log("test")
+console.log("test");
 
-console.log("kolejny log")
+console.log("kolejny log");
 
+console.log("jeszcze jeden");
 
-console.log("jeszcze jeden")
+console.log("dawid zmiana");
 
-console.log("dawid zmiana")
+console.log("siema");
 
-console.log("siema")
-
-
-console.log("DAWID ZMIANA 2")
+console.log("DAWID ZMIANA 2");
 
 console.log("siema")
 
 console.log("oskar1")
+console.log("Byłem tu");
