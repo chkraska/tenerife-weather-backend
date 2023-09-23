@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv"
+dotenv.config()
 
-const MONGO_URL = "mongodb+srv://dawid:dawid123@cluster0.j8lhl.mongodb.net/?retryWrites=true&w=majority"
+const MONGO_URL = process.env.ATLAS_CONNECTION
+
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
