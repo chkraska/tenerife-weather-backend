@@ -24,7 +24,7 @@ db.once("open", async () => {
     min: weather.main.temp_min,
     max: weather.main.temp_max,
     humidity: weather.main.humidity,
-    clouds: weather.clouds,
+    clouds: weather.clouds.all,
     desc: weather.weather[0].description,
     timestamp: weather.timezone
     // temp,min,max,humidity,clouds,desc,timestamp
