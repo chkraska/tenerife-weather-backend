@@ -18,10 +18,16 @@ db.on("error", (err) => {
 db.once("open", async () => {
   console.log("Połączono z bazą danych");
   const weather = await getWeather()
-  console.log(weather)
 
   const weatherData = {
+    temp: weather.main.temp,
+    min: weather.main.temp_min,
+    max: weather.main.temp_max,
+    humidity: weather.main.humidity,
+    clouds: weather.clouds,
+    desc: weather.weather[0].description,
+    timestamp: weather.timezone
     // temp,min,max,humidity,clouds,desc,timestamp
   }
-
+  console.log(weatherData)
 });
