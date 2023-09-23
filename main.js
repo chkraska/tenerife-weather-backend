@@ -4,3 +4,6 @@ console.log("kolejny log")
 
 
 console.log("jeszcze jeden")
+
+
+console.log("siema")
