@@ -44,6 +44,10 @@ db.once("open", () => {
 const app = express()
 app.use(cors())
 
+app.get("/",async function(req,res){
+  res.json({message:"homepage"})
+})
+
 app.get("/api/pogoda", async function(req,res){
   try {
     const items = await Weather.find()
